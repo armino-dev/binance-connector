@@ -1,0 +1,19 @@
+language: php
+
+php:
+  - 7.4
+  - 8.0
+
+cache:
+  directories:
+    - vendor
+
+before_script:
+  - composer self-update --2
+  - composer update
+
+script:
+  - vendor/bin/phpunit
+
+notifications:
+  email: false
