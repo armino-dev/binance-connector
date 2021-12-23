@@ -3,7 +3,7 @@
 ## Usage
 
 ```bash
-composer require armino/binance-connector
+composer require armino-dev/binance-connector
 ```
 
 ```php
