@@ -1,5 +1,5 @@
 {
-  "name": "armino/binance-connector",
+  "name": "armino-dev/binance-connector",
   "description": "Binance API connector for PHP",
   "type": "library",
   "keywords": [
