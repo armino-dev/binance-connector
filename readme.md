@@ -2,7 +2,8 @@
 
 [![Build Status](https://app.travis-ci.com/armino-dev/binance-connector.svg?branch=master)](https://app.travis-ci.com/armino-dev/binance-connector)
 
-## *** Work in progress ***
+*** Work in progress ***
+
 ## Usage
 
 Go to your project folder and type in a terminal:
