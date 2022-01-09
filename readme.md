@@ -1,20 +1,16 @@
----
-description: >-
-  Binance API connector for PHP is a simple library that allows you to perform
-  API requests to the Binance Exchange.
----
-
-# Intro
-
 [![Build Status](https://app.travis-ci.com/armino-dev/binance-connector.svg?branch=master)](https://app.travis-ci.com/armino-dev/binance-connector)
 
-\*\*\* Work in progress \*\*\*
+# Binance API connector for PHP
+
+Before you begin, just bear in mind this is **work in progress**.
+
+Binance API connector for PHP is a simple library that allows you to perform API requests to the Binance Exchange.
 
 ## Prerequisites
 
 * `PHP` version >= 7.4
 * `ext-curl` enabled
-* `composer` installed and globally accesible
+* `composer` installed and globally accessible
 
 ## Usage
 
