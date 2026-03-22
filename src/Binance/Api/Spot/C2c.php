@@ -8,7 +8,7 @@ use Armino\BinanceConnector\Binance\Api\Api;
 use Armino\BinanceConnector\Binance\Api\Signable;
 use Armino\BinanceConnector\Binance\Api\Signature;
 
-final class Market extends Api implements Signature
+final class C2c extends Api implements Signature
 {
     use Signable;
 
