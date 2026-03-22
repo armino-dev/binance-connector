@@ -1,6 +1,6 @@
 # Binance API connector for PHP
 
-[![Build Status](https://app.travis-ci.com/armino-dev/binance-connector.svg?branch=master)](https://app.travis-ci.com/armino-dev/binance-connector)
+[![Build Status](https://github.com/armino-dev/binance-connector/actions/workflows/test-suite.yml/badge.svg)](https://github.com/armino-dev/binance-connector/actions/workflows/test-suite.yml)
 
 ## *** Work in progress ***
 ## Usage
