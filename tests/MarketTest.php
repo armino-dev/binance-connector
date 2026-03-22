@@ -49,7 +49,7 @@ final class MarketTest extends TestCase
         $this->assertInstanceOf(Market::class, $this->market);
 
         $this->assertEquals($this->market->getEndpoint(), 'https://api.binance.com/api/v3');
-        
+
         $this->assertNull($this->market->getTimestamp());
         $this->assertNull($this->market->getSignature());
     }
@@ -59,7 +59,7 @@ final class MarketTest extends TestCase
         $info = json_decode($this->market->exchangeInformation(), true);
 
         $this->assertIsArray($info);
-        
+
         $this->assertArrayHasKey("timezone", $info);
         $this->assertArrayHasKey("serverTime", $info);
         $this->assertArrayHasKey("rateLimits", $info);
@@ -71,7 +71,7 @@ final class MarketTest extends TestCase
         $book = json_decode($this->market->orderBook(), true);
 
         $this->assertIsArray($book);
-        
+
         $this->assertArrayHasKey("lastUpdateId", $book);
         $this->assertArrayHasKey("bids", $book);
     }

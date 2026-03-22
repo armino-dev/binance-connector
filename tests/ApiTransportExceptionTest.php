@@ -12,7 +12,7 @@ final class ApiTransportExceptionTest extends TestCase
 {
     public function testApiSurfacesHttpClientExceptionOnTransportFailure(): void
     {
-        $api = new class extends Api {
+        $api = new class () extends Api {
             public function __construct()
             {
                 $this->endpoint = self::_API_BASE_URL;

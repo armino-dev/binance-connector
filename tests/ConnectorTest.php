@@ -17,7 +17,7 @@ final class ConnectorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->connector = Connector::init('key', 'secret');        
+        $this->connector = Connector::init('key', 'secret');
     }
 
     public function testConnectorIsCorrectlyInstantiated()

@@ -33,7 +33,7 @@ final class LeverageToken extends Api implements Signature
             $data['tokenName'] = $tokenName;
             $url .= '?' . http_build_query($data);
         }
-        
+
         return $this->get($url);
     }
 
@@ -67,7 +67,7 @@ final class LeverageToken extends Api implements Signature
         $data['signature'] = $this->sign(http_build_query($data));
 
         $url = $this->endpoint . "/subscribe/record?" . http_build_query($data);
-        
+
         return $this->get($url);
     }
 

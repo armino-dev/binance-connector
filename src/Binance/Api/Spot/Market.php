@@ -34,7 +34,7 @@ final class Market extends Api
         }
 
         $query = empty($data) ? '' : '?' . http_build_query($data);
-        
+
         $url = $this->endpoint . '/exchangeInfo' . $query;
 
         return $this->get($url);
@@ -43,7 +43,7 @@ final class Market extends Api
     public function orderBook(string $symbol = 'BTCUSDT', int $limit = 100): string
     {
         $validLimits = [5, 10, 20, 50, 100, 500, 1000, 5000];
-        
+
         $data = [
             'symbol' => $symbol,
             'limit' => in_array($limit, $validLimits) ? $limit : 100,

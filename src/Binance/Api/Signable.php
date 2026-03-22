@@ -9,5 +9,5 @@ trait Signable
     public function sign(string $query): string
     {
         return $this->signature = hash_hmac('sha256', $query, $this->apiSecret);
-    }    
+    }
 }
