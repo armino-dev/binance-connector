@@ -33,7 +33,7 @@ final class Connector
     public Wallet $wallet;
     public Market $market;
     public Status $status;
-    
+
     private function __construct()
     {
         // Disabled constructor
@@ -47,16 +47,16 @@ final class Connector
 
         self::$apiKey = $apiKey;
         self::$apiSecret = $apiSecret;
-        self::$instance = new self;
+        self::$instance = new self();
 
         foreach (self::$apiConnectors as $connector => $initializers) {
             $variable = lcfirst(basename(str_replace('\\', '/', $connector)));
-            
+
             if (is_array($initializers)) {
                 $variables = array_map(function ($initializer) {
-                    return self::$$initializer; 
+                    return self::$$initializer;
                 }, $initializers);
-                
+
                 self::$instance->$variable = new $connector(...$variables);
             } else {
                 self::$instance->$variable = new $connector();

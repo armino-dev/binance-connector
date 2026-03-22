@@ -2,3 +2,4 @@
 .vscode
 .env
 .phpunit*
+.php-cs-fixer.cache

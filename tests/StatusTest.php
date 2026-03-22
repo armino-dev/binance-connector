@@ -44,7 +44,7 @@ final class StatusTest extends TestCase
         $this->assertInstanceOf(Status::class, $this->status);
 
         $this->assertEquals($this->status->getEndpoint(), 'https://api.binance.com/sapi/v1/system');
-        
+
         $this->assertNull($this->status->getTimestamp());
         $this->assertNull($this->status->getSignature());
     }
@@ -54,10 +54,10 @@ final class StatusTest extends TestCase
         $result = json_decode($this->status->status(), true);
 
         $this->assertIsArray($result);
-        
+
         $this->assertArrayHasKey('status', $result);
         $this->assertArrayHasKey('msg', $result);
-        
+
         $this->assertEquals(0, $result['status']);
         $this->assertEquals("normal", $result['msg']);
     }
@@ -67,7 +67,7 @@ final class StatusTest extends TestCase
         $result = json_decode($this->status->ping(), true);
 
         $this->assertIsArray($result);
-        
+
         $this->assertEmpty($result);
     }
 

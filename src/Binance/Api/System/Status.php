@@ -26,7 +26,7 @@ final class Status extends Api
     public function ping(): string
     {
         $url = self::_API_BASE_URL . '/api/v3/ping';
-        
+
         return $this->get($url);
     }
 

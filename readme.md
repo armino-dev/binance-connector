@@ -64,3 +64,23 @@ Run optional real Binance smoke checks:
 ```bash
 vendor/bin/phpunit --group integration
 ```
+
+## Code quality (local development)
+
+Lint PHP files:
+
+```bash
+composer lint
+```
+
+Check formatting without changing files:
+
+```bash
+composer format:check
+```
+
+Apply formatting:
+
+```bash
+composer format
+```

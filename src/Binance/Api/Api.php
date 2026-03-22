@@ -9,9 +9,10 @@ use Armino\BinanceConnector\HttpClient\Request;
 use Closure;
 use Throwable;
 
-abstract class Api {
+abstract class Api
+{
     public const _API_BASE_URL = "https://api.binance.com";
-    
+
     protected string $endpoint;
     protected ?string $timestamp = null;
     protected ?string $apiKey = null;
