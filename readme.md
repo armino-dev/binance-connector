@@ -50,3 +50,17 @@ try {
 	}
 }
 ```
+
+## Tests
+
+Run the default unit suite (integration tests are excluded by default):
+
+```bash
+vendor/bin/phpunit
+```
+
+Run optional real Binance smoke checks:
+
+```bash
+vendor/bin/phpunit --group integration
+```

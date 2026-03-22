@@ -6,6 +6,7 @@ namespace Armino\BinanceConnector\Binance\Api;
 
 use Armino\BinanceConnector\HttpClient\Exceptions\HttpClientException;
 use Armino\BinanceConnector\HttpClient\Request;
+use Closure;
 use Throwable;
 
 abstract class Api {
@@ -18,6 +19,7 @@ abstract class Api {
     protected ?string $signature = null;
 
     protected array $headers;
+    protected ?Closure $requestHandler = null;
 
     public function getEndpoint(): string
     {
@@ -39,6 +41,11 @@ abstract class Api {
         return round(microtime(true) * 1000);
     }
 
+    public function setRequestHandler(callable $handler): void
+    {
+        $this->requestHandler = Closure::fromCallable($handler);
+    }
+
     protected function get(string $url, array $headers = []): string
     {
         return $this->send(Request::METHOD_GET, $url, $headers);
@@ -58,6 +65,16 @@ abstract class Api {
     protected function send(string $method, string $url, array $headers = [], string $payload = ''): string
     {
         $headers = array_merge($this->headers, $headers ?? []);
+
+        if ($this->requestHandler !== null) {
+            $response = ($this->requestHandler)($method, $url, $headers, $payload);
+
+            if (!is_string($response)) {
+                throw new HttpClientException('Mocked request handler must return a string response.');
+            }
+
+            return $response;
+        }
 
         $request = new Request($method, $url, $headers, $payload);
 
