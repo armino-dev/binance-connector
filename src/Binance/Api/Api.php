@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Armino\BinanceConnector\Binance\Api;
 
+use Armino\BinanceConnector\HttpClient\Exceptions\HttpClientException;
 use Armino\BinanceConnector\HttpClient\Request;
-use Exception;
 use Throwable;
 
 abstract class Api {
@@ -63,8 +63,10 @@ abstract class Api {
 
         try {
             return $request->send();
+        } catch (HttpClientException $e) {
+            throw $e;
         } catch (Throwable $e) {
-            throw new Exception('Request cannot be completed');
+            throw new HttpClientException('Request cannot be completed', 0, $e);
         }
     }
 }

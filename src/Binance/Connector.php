@@ -28,6 +28,11 @@ final class Connector
     private static $instance = null;
     private static $apiKey;
     private static $apiSecret;
+
+    public LeverageToken $leverageToken;
+    public Wallet $wallet;
+    public Market $market;
+    public Status $status;
     
     private function __construct()
     {
