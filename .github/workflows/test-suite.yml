@@ -1,9 +1,6 @@
 name: Test Suite
 
 on:
-  push:
-    branches:
-      - "**"
   pull_request:
 
 jobs:
